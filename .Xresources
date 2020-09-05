@@ -1,0 +1,26 @@
+URxvt.scrollBar: false
+URxvt.saveLines: 5000
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.perl-ext-common: keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+*.font: xft:GohuFont, xft:gothic
+*.background: #101010
+*.foreground: #b9b9b9
+*.color0:     #080c0d
+*.color1:     #e0374f
+*.color2:     #85c600
+*.color3:     #ffa600
+*.color4:     #0099bc
+*.color5:     #e50c88
+*.color6:     #7fc5c6
+*.color7:     #cccccc
+*.color8:     #283032
+*.color9:     #ff5b47
+*.color10:    #b3ff14
+*.color11:    #ffaa04
+*.color12:    #5adede
+*.color13:    #be4372
+*.color14:    #75b2b3
+*.color15:    #eeeeee

@@ -1,0 +1,6 @@
+xrandr --output eDP --off
+xrandr --output HDMI-A-0 --set TearFree on
+
+setxkbmap -option caps:swapescape
+
+sct 4000

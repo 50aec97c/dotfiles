@@ -1,0 +1,34 @@
+# i3status configuration file.
+
+general {
+	output_format = "none"
+	interval      = 5
+	separator     = " "
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "battery 0"
+order += "volume master"
+order += "tztime local"
+
+cpu_usage {
+	format = "<span foreground='#b75962' font='Siji 8'></span> %usage "
+}
+
+memory {
+	format = "<span foreground='#81c8b2' font='Siji 8'></span> %used "
+}
+
+battery 0 {
+	integer_battery_capacity = true
+	format = "<span foreground='#93ae7c' font='Siji 8'></span> %percentage "
+}
+
+volume master {
+	format = "<span foreground='#81a1c1' font='Siji 8'></span> %volume "
+}
+
+tztime local {
+	format = "<span foreground='#ebcb8b' font='Siji 8'></span> %a %b %d <span foreground='#e0374f' font='Siji 8'></span> %H:%M  "
+}
