@@ -13,22 +13,22 @@ order += "volume master"
 order += "tztime local"
 
 cpu_usage {
-	format = "<span foreground='#b75962' font='Siji 8'></span> %usage "
+	format = "| %usage |"
 }
 
 memory {
-	format = "<span foreground='#81c8b2' font='Siji 8'></span> %used "
+	format = "| %used |"
 }
 
 battery 0 {
 	integer_battery_capacity = true
-	format = "<span foreground='#93ae7c' font='Siji 8'></span> %percentage "
+	format = "| %percentage |"
 }
 
 volume master {
-	format = "<span foreground='#81a1c1' font='Siji 8'></span> %volume "
+	format = "| %volume |"
 }
 
 tztime local {
-	format = "<span foreground='#ebcb8b' font='Siji 8'></span> %a %b %d <span foreground='#e0374f' font='Siji 8'></span> %H:%M  "
+	format = "| %a %b %d  || %H:%M  |"
 }
