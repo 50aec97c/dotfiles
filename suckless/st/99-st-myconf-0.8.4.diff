@@ -1,0 +1,101 @@
+diff --git a/config.def.h b/config.def.h
+index cd9e45d..6f3c120 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,11 +5,11 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *font = "gohufont:pixelsize=13:antialias=false:autohint=true";
+ /* Spare fonts */
+ static char *font2[] = {
+-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
++	"dejavu sans mono:pixelsize=13:antialias=false:autohint=true",
++	"ms gothic:pixelsize=12:antialias=false:autohint=true",
+ };
+ 
+ static int borderpx = 2;
+@@ -51,7 +51,7 @@ int allowaltscreen = 1;
+ 
+ /* allow certain non-interactive (insecure) window operations such as:
+    setting the clipboard text */
+-int allowwindowops = 0;
++int allowwindowops = 1;
+ 
+ /*
+  * draw latency range in ms - from new content/keypress/etc until drawing.
+@@ -108,30 +108,30 @@ unsigned int tabspaces = 8;
+ /* Terminal colors (16 first used in escape sequence) */
+ static const char *colorname[] = {
+ 	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
++	"#080c0d",
++	"#e0374f",
++	"#85c600",
++	"#ffa600",
++	"#0099bc",
++	"#e50c88",
++	"#7fc5c6",
++	"#cccccc",
+ 
+ 	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
++	"#283032",
++	"#ff5b47",
++	"#b3ff14",
++	"#ffaa04",
++	"#5adede",
++	"#be4372",
++	"#75b2b3",
++	"#eeeeee",
+ 
+ 	[255] = 0,
+ 
+ 	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
++	"#b9b9b9",
++	"#101010",
+ };
+ 
+ 
+@@ -139,8 +139,8 @@ static const char *colorname[] = {
+  * Default colors (colorname index)
+  * foreground, background, cursor, reverse cursor
+  */
+-unsigned int defaultfg = 7;
+-unsigned int defaultbg = 0;
++unsigned int defaultfg = 256;
++unsigned int defaultbg = 257;
+ static unsigned int defaultcs = 256;
+ static unsigned int defaultrcs = 257;
+ 
+diff --git a/config.mk b/config.mk
+index c070a4a..20ed2cc 100644
+--- a/config.mk
++++ b/config.mk
+@@ -22,7 +22,7 @@ LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
+ 
+ # flags
+ STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
+-STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
++STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS) -march=native -O3
+ STLDFLAGS = $(LIBS) $(LDFLAGS)
+ 
+ # OpenBSD:
