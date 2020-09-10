@@ -7,13 +7,13 @@ index cd9e45d..6f3c120 100644
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-+static char *font = "gohufont:pixelsize=13:antialias=false:autohint=true";
++static char *font = "gohufont:scalable=false";
  /* Spare fonts */
  static char *font2[] = {
 -/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
 -/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 +	"dejavu sans mono:pixelsize=13:antialias=false:autohint=true",
-+	"ms gothic:pixelsize=12:antialias=false:autohint=true",
++	"gothic:scalable=false",
  };
  
  static int borderpx = 2;
