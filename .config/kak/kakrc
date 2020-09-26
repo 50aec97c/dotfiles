@@ -1,17 +1,14 @@
-colorscheme gruvbox
+#colorscheme nord
 
-add-highlighter global/ number-lines
+set global indentwidth 0
+set global aligntab true
+
 add-highlighter global/ show-matching
-add-highlighter global/ show-whitespaces
+add-highlighter global/ number-lines -relative -hlcursor
+add-highlighter global/ wrap
+add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default,rgb:5e81ac+b
+add-highlighter global/ ranges show_matching_insert
 
-set global tabstop 4
+map global normal '<a-\>' '<a-i>w:ctags-search<ret>'
 
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
-plug "andreyorst/plug.kak" noload
-plug "andreyorst/smarttab.kak" defer smarttab %{
-    set-option global softtabstop 4
-} config %{
-    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|lua) expandtab
-    hook global WinSetOption filetype=(makefile|gas) noexpandtab
-    hook global WinSetOption filetype=(c|cpp) smarttab
-}
+hook global WinCreate ^[^*]+$ %{editorconfig-load}

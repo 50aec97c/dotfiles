@@ -3,32 +3,32 @@
 general {
 	output_format = "none"
 	interval      = 5
-	separator     = " "
+	separator     = "|"
 }
 
-order += "cpu_usage"
-order += "memory"
-order += "battery 0"
-order += "volume master"
 order += "tztime local"
+order += "volume master"
+order += "battery 0"
+order += "memory"
+order += "cpu_usage"
 
 cpu_usage {
-	format = "| %usage |"
+	format = "%usage"
 }
 
 memory {
-	format = "| %used |"
+	format = "%used"
 }
 
 battery 0 {
 	integer_battery_capacity = true
-	format = "| %percentage |"
+	format = "%percentage"
 }
 
 volume master {
-	format = "| %volume |"
+	format = "%volume"
 }
 
 tztime local {
-	format = "| %a %b %d  || %H:%M  |"
+	format = "%a %b %d  %H:%M"
 }
